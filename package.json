@@ -12,7 +12,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client:start\"",
     "client:start": "cd client && yarn start",
     "client:install": "cd client && yarn",
-    "lint": "npx eslint --fix *.js test *.js",
+    "lint": "npx eslint --fix *.js",
     "client:lint": "cd client &&  yarn lint",
     "lint:all": "yarn lint && yarn client:lint",
     "test": "jest --forceExit",
