@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 
 const app = express();
 
@@ -9,7 +10,16 @@ app.use(cors({
   credentials: true,
 }));
 
-app.get('/', (req, res) => res.send('Hello client!'));
+const fileContents = fs.readFileSync('./five-letter-words.json', 'utf-8');
+const words = JSON.parse(fileContents);
+const { fiveLetterWords } = words;
+
+app.get('/', (req, res) => {
+  // Select random word
+  const word = fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
+
+  res.send(word);
+});
 
 const port = process.env.PORT || 5000;
 
