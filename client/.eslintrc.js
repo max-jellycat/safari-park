@@ -22,6 +22,8 @@ module.exports = {
     'no-unused-expressions': 0,
     'no-unused-vars': 1,
     'max-len': 0,
+    'import/no-extraneous-dependencies': 0,
     'jsx-a11y/label-has-associated-control': 0,
+    'react/jsx-props-no-spreading': 0,
   },
 };
