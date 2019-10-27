@@ -15,5 +15,6 @@ module.exports = {
   },
   rules: {
     'consistent-return': 0,
+    'no-unused-vars': 1,
   },
 };
