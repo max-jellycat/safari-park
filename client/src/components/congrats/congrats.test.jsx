@@ -36,6 +36,5 @@ it('renders non-empty congrats message when `success` prop is true', () => {
 });
 
 it('do not throw warning with expected props', () => {
-  const expectedProps = defaultProps;
-  checkProps(Congrats, expectedProps);
+  checkProps(Congrats, defaultProps);
 });
