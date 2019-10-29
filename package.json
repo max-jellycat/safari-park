@@ -1,64 +1,72 @@
 {
-  "name": "express-react-bootstrap-2019",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "engines": {
-    "node": "10.16.3"
+  "name": "jotto",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.11.2",
+    "ajv": "^6.10.2",
+    "axios": "^0.19.0",
+    "bulma": "^0.7.5",
+    "bulma-extensions": "^6.2.7",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest-enzyme": "^7.1.1",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.1",
+    "react-scripts": "3.2.0",
+    "react-test-renderer": "^16.10.2",
+    "react-transition-group": "^4.3.0",
+    "use-reducer-logger": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "check-prop-types": "^1.1.2",
+    "cross-env": "^6.0.3",
+    "customize-cra": "^0.8.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "react-app-rewired": "^2.1.3"
   },
   "scripts": {
-    "server": "nodemon index.js",
-    "start": "node index.js",
-    "dev": "concurrently \"yarn server\" \"yarn client:start\"",
-    "client:start": "cd client && yarn start",
-    "client:install": "cd client && yarn",
-    "lint": "npx eslint --fix *.js",
-    "client:lint": "cd client &&  yarn lint",
-    "lint:all": "yarn lint && yarn client:lint",
-    "test": "jest --forceExit",
-    "client:test": "cd client && yarn test",
-    "test:all": "yarn test && yarn client:test",
-    "client:precommit": "cd client && yarn precommit",
-    "clean": "rm -rf node_modules && cd client && rm -rf node_modules",
-    "precommit": "lint-staged && yarn test",
-    "precommit:all": "yarn precommit && yarn client:precommit",
-    "heroku-postbuild": "cd client && yarn && yarn build"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/client/"
-    ]
+    "clean": "rm -rf node_modules",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test:watch": "react-app-rewired test",
+    "test": "cross-env CI=true react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "lint": "npx eslint --fix src/**/*.js[x]",
+    "precommit": "lint-staged && yarn test"
   },
   "lint-staged": {
-    "**/*.js": [
+    "src/**/*.js[x]": [
       "yarn lint",
       "git add"
     ]
   },
-  "dependencies": {
-    "concurrently": "^5.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
-  "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "husky": "^3.0.9",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.4.2",
-    "nodemon": "^1.19.3",
-    "prettier": "^1.18.2",
-    "supertest": "^4.0.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit:all"
+      "pre-commit": "yarn precommit"
     }
   }
 }
