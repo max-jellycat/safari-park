@@ -9,3 +9,12 @@
 @import '~@fortawesome/fontawesome-pro/scss/fontawesome';
 @import '~@fortawesome/fontawesome-pro/scss/duotone';
 
+// Components
+@import './components/congrats/congrats.styles.scss';
+@import './components/guessed-words/guessed-words.styles.scss';
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}

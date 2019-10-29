@@ -2,8 +2,6 @@
 @import 'functions';
 @import 'custom-variables';
 @import 'mixins';
-@import 'sizings';
-@import 'positions';
 @import 'colors';
 @import 'globals';
 
@@ -11,6 +9,8 @@
 @import '~bulma/bulma';
 @import '~bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio';
 
+@import 'sizings';
+@import 'positions';
 // Mixins
 @include is-lighter();
 @include is-darker();
