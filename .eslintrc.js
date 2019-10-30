@@ -24,8 +24,9 @@ module.exports = {
     'no-empty-pattern': 0,
     'max-len': 0,
     'import/no-extraneous-dependencies': 0,
+    'import/prefer-default-export': 0,
     'jsx-a11y/label-has-associated-control': 0,
     'react/jsx-props-no-spreading': 0,
-    'import/prefer-default-export': 0,
+    'react/prefer-stateless-function': 1,
   },
 };
