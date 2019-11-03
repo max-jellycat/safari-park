@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const FormInput = ({
   handleChange, type, name, placeholder, icon, value,
 }) => (
-  <div className="field">
+  <div data-test="component-basic-input" className="field">
     <div className="control has-icons-left">
       <input
         className="input"

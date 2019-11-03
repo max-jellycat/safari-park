@@ -3,12 +3,14 @@ import './App.scss';
 
 import GuessedWords from './components/guessed-words/guessed-words.component';
 import Congrats from './components/congrats/congrats.component';
+import GuessInput from './components/guess-input/guess-input.component';
 
 const App = () => (
   <section className="app">
     <main className="section">
       <h1 className="title is-size-1">Jotto</h1>
       <Congrats success={false} />
+      <GuessInput />
       <GuessedWords
         guessedWords={[
           { guessedWord: 'train', letterMatchCount: 3 },

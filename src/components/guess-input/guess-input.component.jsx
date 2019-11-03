@@ -22,7 +22,7 @@ class GuessInput extends Component {
             <button
               data-test="submit-button"
               type="submit"
-              className="button is-primary-has-shadow"
+              className="button is-primary has-shadow"
             >
               Guess
             </button>
