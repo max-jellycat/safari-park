@@ -9,6 +9,8 @@
       "client",
       "."
     ],
-    "prettier.trailingComma": "es5"
+    "prettier.trailingComma": "es5",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
   }
 }
