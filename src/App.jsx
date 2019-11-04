@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import GuessedWords from './components/guessed-words/guessed-words.component';
+import GuessedPokemons from './components/guessed-pokemons/guessed-pokemons.component';
 import Congrats from './components/congrats/congrats.component';
 import GuessInput from './components/guess-input/guess-input.component';
 
@@ -11,10 +11,10 @@ const App = () => (
       <h1 className="title is-size-1">Jotto</h1>
       <Congrats success={false} />
       <GuessInput />
-      <GuessedWords
-        guessedWords={[
-          { guessedWord: 'train', letterMatchCount: 3 },
-          { guessedWord: 'party', letterMatchCount: 5 },
+      <GuessedPokemons
+        guessedPokemons={[
+          { guessedPokemon: 'train', letterMatchCount: 3 },
+          { guessedPokemon: 'party', letterMatchCount: 5 },
         ]}
       />
     </main>

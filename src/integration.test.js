@@ -1,26 +1,26 @@
 import { storeFactory } from './test/testUtils';
-import { guessWord } from './actions';
+import { guessPokemon } from './actions';
 
-describe('guessWord action dispatcher', () => {
-  const secretWord = 'pikachu';
+describe('guessPokemon action dispatcher', () => {
+  const secretPokemon = 'pikachu';
   const unsuccessfulGuess = 'meowth';
 
-  describe('no guessed words', () => {
+  describe('no guessed pokemons', () => {
     let store;
-    const initialState = { secretWord };
+    const initialState = { secretPokemon };
     beforeEach(() => {
       store = storeFactory(initialState);
     });
 
     it('updates state correctly for unsuccessful guess', () => {
-      store.dispatch(guessWord(unsuccessfulGuess));
+      store.dispatch(guessPokemon(unsuccessfulGuess));
       const newState = store.getState();
       const expectedState = {
         ...initialState,
         success: false,
-        guessedWords: [
+        guessedPokemons: [
           {
-            guessedWord: unsuccessfulGuess,
+            guessedPokemon: unsuccessfulGuess,
             letterMatchCount: 1,
           },
         ],
@@ -29,15 +29,15 @@ describe('guessWord action dispatcher', () => {
     });
 
     it('updates state correctly for successful guess', () => {
-      store.dispatch(guessWord(secretWord));
+      store.dispatch(guessPokemon(secretPokemon));
       const newState = store.getState();
       const expectedState = {
         ...initialState,
         success: true,
-        guessedWords: [
+        guessedPokemons: [
           {
-            guessedWord: secretWord,
-            letterMatchCount: secretWord.length,
+            guessedPokemon: secretPokemon,
+            letterMatchCount: secretPokemon.length,
           },
         ],
       };
@@ -45,26 +45,26 @@ describe('guessWord action dispatcher', () => {
     });
   });
 
-  describe('some guessed words', () => {
-    const guessedWords = [
-      { guessedWord: 'bulbasaur', letterMatchCount: 2 },
-      { guessedWord: 'charmander', letterMatchCount: 3 },
-      { guessedWord: 'squirtle', letterMatchCount: 2 },
+  describe('some guessed pokemons', () => {
+    const guessedPokemons = [
+      { guessedPokemon: 'bulbasaur', letterMatchCount: 2 },
+      { guessedPokemon: 'charmander', letterMatchCount: 3 },
+      { guessedPokemon: 'squirtle', letterMatchCount: 2 },
     ];
-    const initialState = { guessedWords, secretWord };
+    const initialState = { guessedPokemons, secretPokemon };
     let store;
     beforeEach(() => {
       store = storeFactory(initialState);
     });
 
     it('updates state correctly for unsuccessful guess', () => {
-      store.dispatch(guessWord(unsuccessfulGuess));
+      store.dispatch(guessPokemon(unsuccessfulGuess));
       const newState = store.getState();
       const expectedState = {
         ...initialState,
-        guessedWords: [
-          ...guessedWords,
-          { guessedWord: unsuccessfulGuess, letterMatchCount: 1 },
+        guessedPokemons: [
+          ...guessedPokemons,
+          { guessedPokemon: unsuccessfulGuess, letterMatchCount: 1 },
         ],
         success: false,
       };
@@ -72,13 +72,16 @@ describe('guessWord action dispatcher', () => {
     });
 
     it('updates state correctly for successful guess', () => {
-      store.dispatch(guessWord(secretWord));
+      store.dispatch(guessPokemon(secretPokemon));
       const newState = store.getState();
       const expectedState = {
         ...initialState,
-        guessedWords: [
-          ...guessedWords,
-          { guessedWord: secretWord, letterMatchCount: secretWord.length },
+        guessedPokemons: [
+          ...guessedPokemons,
+          {
+            guessedPokemon: secretPokemon,
+            letterMatchCount: secretPokemon.length,
+          },
         ],
         success: true,
       };

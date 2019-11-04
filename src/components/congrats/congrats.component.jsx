@@ -14,7 +14,7 @@ const Congrats = ({ success }) => (
   >
     {success && (
       <span data-test="congrats-message">
-        Congratulations! You guessed the word!
+        Congratulations! You guessed the pokemon!
       </span>
     )}
   </article>

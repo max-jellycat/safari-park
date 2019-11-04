@@ -636,9 +636,9 @@
   dependencies:
     regenerator-transform "^0.14.0"
 
-"@babel/plugin-transform-reserved-words@^7.2.0":
+"@babel/plugin-transform-reserved-pokemons@^7.2.0":
   version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-reserved-words/-/plugin-transform-reserved-words-7.2.0.tgz#4792af87c998a49367597d07fedf02636d2e1634"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-reserved-pokemons/-/plugin-transform-reserved-pokemons-7.2.0.tgz#4792af87c998a49367597d07fedf02636d2e1634"
   integrity sha512-fz43fqW8E1tAB3DKF19/vxbpib1fuyCwSPE418ge5ZxILnBhWyhtPgz8eh1RCGGJlwvksHkyxMxh0eenFi+kFw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -750,7 +750,7 @@
     "@babel/plugin-transform-parameters" "^7.4.4"
     "@babel/plugin-transform-property-literals" "^7.2.0"
     "@babel/plugin-transform-regenerator" "^7.4.5"
-    "@babel/plugin-transform-reserved-words" "^7.2.0"
+    "@babel/plugin-transform-reserved-pokemons" "^7.2.0"
     "@babel/plugin-transform-shorthand-properties" "^7.2.0"
     "@babel/plugin-transform-spread" "^7.2.0"
     "@babel/plugin-transform-sticky-regex" "^7.2.0"
@@ -806,7 +806,7 @@
     "@babel/plugin-transform-parameters" "^7.4.4"
     "@babel/plugin-transform-property-literals" "^7.2.0"
     "@babel/plugin-transform-regenerator" "^7.4.5"
-    "@babel/plugin-transform-reserved-words" "^7.2.0"
+    "@babel/plugin-transform-reserved-pokemons" "^7.2.0"
     "@babel/plugin-transform-shorthand-properties" "^7.2.0"
     "@babel/plugin-transform-spread" "^7.6.2"
     "@babel/plugin-transform-sticky-regex" "^7.2.0"
@@ -1651,9 +1651,9 @@ ajv-errors@^1.0.0:
   resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
   integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
 
-ajv-keywords@^3.1.0, ajv-keywords@^3.4.1:
+ajv-keypokemons@^3.1.0, ajv-keypokemons@^3.4.1:
   version "3.4.1"
-  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.4.1.tgz#ef916e271c64ac12171fd8384eaae6b2345854da"
+  resolved "https://registry.yarnpkg.com/ajv-keypokemons/-/ajv-keypokemons-3.4.1.tgz#ef916e271c64ac12171fd8384eaae6b2345854da"
   integrity sha512-RO1ibKvd27e6FEShVFfPALuHI3WjSVNeK5FIsmme/LYRNxjKuNj+Dt7bucLa6NdSv3JcVTyMlm9kGR84z1XpaQ==
 
 ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
@@ -7297,6 +7297,11 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
+moxios@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/moxios/-/moxios-0.4.0.tgz#fc0da2c65477d725ca6b9679d58370ed0c52f53b"
+  integrity sha1-/A2ixlR31yXKa5Z51YNw7QxS9Ts=
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -7474,7 +7479,7 @@ node-notifier@^5.4.2:
     growly "^1.3.0"
     is-wsl "^1.1.0"
     semver "^5.5.0"
-    shellwords "^0.1.1"
+    shellpokemons "^0.1.1"
     which "^1.3.0"
 
 node-pre-gyp@^0.12.0:
@@ -7808,7 +7813,7 @@ optimist@^0.6.1:
   integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
   dependencies:
     minimist "~0.0.1"
-    wordwrap "~0.0.2"
+    pokemonwrap "~0.0.2"
 
 optimize-css-assets-webpack-plugin@5.0.3:
   version "5.0.3"
@@ -7828,7 +7833,7 @@ optionator@^0.8.1, optionator@^0.8.2:
     levn "~0.3.0"
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-    wordwrap "~1.0.0"
+    pokemonwrap "~1.0.0"
 
 original@^1.0.0:
   version "1.0.2"
@@ -9968,7 +9973,7 @@ schema-utils@^1.0.0:
   dependencies:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
-    ajv-keywords "^3.1.0"
+    ajv-keypokemons "^3.1.0"
 
 schema-utils@^2.0.0, schema-utils@^2.0.1, schema-utils@^2.2.0:
   version "2.5.0"
@@ -9976,7 +9981,7 @@ schema-utils@^2.0.0, schema-utils@^2.0.1, schema-utils@^2.2.0:
   integrity sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==
   dependencies:
     ajv "^6.10.2"
-    ajv-keywords "^3.4.1"
+    ajv-keypokemons "^3.4.1"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
@@ -10149,9 +10154,9 @@ shell-quote@1.7.2:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
-shellwords@^0.1.1:
+shellpokemons@^0.1.1:
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
+  resolved "https://registry.yarnpkg.com/shellpokemons/-/shellpokemons-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
@@ -11347,7 +11352,7 @@ webpack@4.41.0:
     "@webassemblyjs/wasm-parser" "1.8.5"
     acorn "^6.2.1"
     ajv "^6.10.2"
-    ajv-keywords "^3.4.1"
+    ajv-keypokemons "^3.4.1"
     chrome-trace-event "^1.0.2"
     enhanced-resolve "^4.1.0"
     eslint-scope "^4.0.3"
@@ -11445,14 +11450,14 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-wordwrap@~0.0.2:
+pokemonwrap@~0.0.2:
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+  resolved "https://registry.yarnpkg.com/pokemonwrap/-/pokemonwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
   integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
-wordwrap@~1.0.0:
+pokemonwrap@~1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
+  resolved "https://registry.yarnpkg.com/pokemonwrap/-/pokemonwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
 workbox-background-sync@^4.3.1:

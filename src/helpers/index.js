@@ -1,12 +1,12 @@
 /**
  * @method getLetterMatchCount
- * @param {string} guessedWord
- * @param {string} secretWord
+ * @param {string} guessedPokemon
+ * @param {string} secretPokemon
  * @returns {number}
  */
-export const getLetterMatchCount = (guessedWord, secretWord) => {
-  const secretLetterSet = new Set(secretWord.split(''));
-  const guessedLetterSet = new Set(guessedWord.split(''));
+export const getLetterMatchCount = (guessedPokemon, secretPokemon) => {
+  const secretLetterSet = new Set(secretPokemon.split(''));
+  const guessedLetterSet = new Set(guessedPokemon.split(''));
 
   return [...secretLetterSet].filter((letter) => guessedLetterSet.has(letter))
     .length;

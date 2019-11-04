@@ -1,28 +1,51 @@
+import axios from 'axios';
 import { getLetterMatchCount } from '../helpers';
 
 export const actionTypes = {
   CORRECT_GUESS: 'CORRECT_GUESS',
   GUESS_WORD: 'GUESS_WORD',
+  SET_SECRET_POKEMON: 'SET_SECRET_POKEMON',
 };
 
 /**
  * Returns redux thunk function that dispatches GUESS_WORD action
  * and (conditionnaly) CORRECT_GUESS action
- * @function guessWord
- * @param {string} guessedWord
+ * @function guessPokemon
+ * @param {string} guessedPokemon
  * @returns {function}
  */
-export const guessWord = (guessedWord) => (dispatch, getState) => {
-  const { secretWord } = getState();
-  const letterMatchCount = getLetterMatchCount(guessedWord, secretWord);
+export const guessPokemon = guessedPokemon => (dispatch, getState) => {
+  const { secretPokemon } = getState();
+  const letterMatchCount = getLetterMatchCount(guessedPokemon, secretPokemon);
 
   dispatch({
     type: actionTypes.GUESS_WORD,
-    payload: { guessedWord, letterMatchCount },
+    payload: { guessedPokemon, letterMatchCount },
   });
 
-  guessedWord === secretWord
-    && dispatch({
+  guessedPokemon === secretPokemon &&
+    dispatch({
       type: actionTypes.CORRECT_GUESS,
+    });
+};
+
+export const getSecretPokemon = () => dispatch => {
+  const randomId = Math.ceil(Math.random() * 807);
+  return axios
+    .get(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+    .then(response => {
+      const { id, name, sprites, types } = response.data;
+      dispatch({
+        type: actionTypes.SET_SECRET_POKEMON,
+        payload: {
+          id,
+          name,
+          sprites,
+          types: types.reduce(
+            (accumulator, type) => [...accumulator, type.type.name],
+            []
+          ),
+        },
+      });
     });
 };

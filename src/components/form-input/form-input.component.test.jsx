@@ -13,7 +13,7 @@ const defaultProps = {
 };
 
 /**
- * Factory function to create a ShallowWrapper for GuessedWords component.
+ * Factory function to create a ShallowWrapper for GuessedPokemons component.
  * @function setup
  * @param {object} props
  * @returns {ShallowWrapper}

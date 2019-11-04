@@ -1,10 +1,10 @@
 import { actionTypes } from '../actions';
 
 /**
- * @function guessedWordsReducer
- * @param {array} state - array of guessed words
+ * @function guessedPokemonsReducer
+ * @param {array} state - array of guessed pokemons
  * @param {object} action - action to be reduced
- * @returns {array} - new guessedWords state
+ * @returns {array} - new guessedPokemons state
  */
 export default (state = [], action) => {
   switch (action.type) {

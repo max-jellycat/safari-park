@@ -13,7 +13,7 @@ const setup = (initialState = false) => {
 };
 
 describe('render', () => {
-  describe('word has not been guessed', () => {
+  describe('pokemon has not been guessed', () => {
     let wrapper;
     beforeEach(() => {
       const initialState = { success: false };
@@ -34,7 +34,7 @@ describe('render', () => {
       expect(submitButton.length).toBe(1);
     });
   });
-  describe('word has been guessed', () => {
+  describe('pokemon has been guessed', () => {
     let wrapper;
     beforeEach(() => {
       const initialState = { success: true };
