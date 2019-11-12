@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { guessPokemon } from '../../actions';
+
 import FormInput from '../form-input/form-input.component';
 
-class GuessInput extends Component {
+class GuessInput extends React.Component {
   render() {
     const { success } = this.props;
     return (
@@ -33,12 +35,12 @@ class GuessInput extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  success: state.success,
+const mapStateToProps = ({ success }) => ({
+  success,
 });
 
 GuessInput.propTypes = {
   success: PropTypes.bool.isRequired,
 };
 
-export default connect(mapStateToProps)(GuessInput);
+export default connect(mapStateToProps, { guessPokemon })(GuessInput);

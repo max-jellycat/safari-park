@@ -5,7 +5,9 @@
     }
   ],
   "settings": {
-    "eslint.workingDirectories": ["client", "."],
-    "prettier.trailingComma": "es5"
+    "eslint.workingDirectories": [
+      "client",
+      "."
+    ]
   }
 }

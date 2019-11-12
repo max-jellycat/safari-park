@@ -11,7 +11,7 @@ describe('getSecretPokemon action creator', () => {
     moxios.uninstall();
   });
 
-  it('add response pokemon to state', () => {
+  it('add formated response pokemon to state', () => {
     const secretPokemon = {
       id: 25,
       name: 'pikachu',

@@ -4,12 +4,11 @@ import { shallow } from 'enzyme';
 import { findByTestAttr, storeFactory } from '../../test/testUtils';
 import GuessInput from './guess-input.component';
 
-const setup = (initialState = false) => {
+const setup = (initialState = {}) => {
   const store = storeFactory(initialState);
-  const wrapper = shallow(<GuessInput store={store} />)
+  return shallow(<GuessInput store={store} />)
     .dive()
     .dive();
-  return wrapper;
 };
 
 describe('render', () => {
@@ -58,3 +57,21 @@ describe('render', () => {
 });
 
 describe('update state', () => {});
+
+describe('redux props', () => {
+  let wrapper;
+  beforeEach(() => {
+    const store = storeFactory({ success: false });
+    wrapper = shallow(<GuessInput store={store} />).dive();
+  });
+
+  test('has success piece of state as prop', () => {
+    const successProp = wrapper.props().success;
+    expect(successProp).toBe(false);
+  });
+
+  test('`guessWord` action creator is a function prop', () => {
+    const guessPokemonProp = wrapper.props().guessPokemon;
+    expect(guessPokemonProp).toBeInstanceOf(Function);
+  });
+});

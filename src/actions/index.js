@@ -14,7 +14,7 @@ export const actionTypes = {
  * @param {string} guessedPokemon
  * @returns {function}
  */
-export const guessPokemon = guessedPokemon => (dispatch, getState) => {
+export const guessPokemon = (guessedPokemon) => (dispatch, getState) => {
   const { secretPokemon } = getState();
   const letterMatchCount = getLetterMatchCount(guessedPokemon, secretPokemon);
 
@@ -29,11 +29,11 @@ export const guessPokemon = guessedPokemon => (dispatch, getState) => {
     });
 };
 
-export const getSecretPokemon = () => dispatch => {
+export const getSecretPokemon = () => (dispatch) => {
   const randomId = Math.ceil(Math.random() * 807);
   return axios
     .get(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
-    .then(response => {
+    .then((response) => {
       const { id, name, sprites, types } = response.data;
       dispatch({
         type: actionTypes.SET_SECRET_POKEMON,
@@ -43,7 +43,7 @@ export const getSecretPokemon = () => dispatch => {
           sprites,
           types: types.reduce(
             (accumulator, type) => [...accumulator, type.type.name],
-            []
+            [],
           ),
         },
       });
