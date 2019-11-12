@@ -6,9 +6,7 @@ import GuessInput from './guess-input.component';
 
 const setup = (initialState = {}) => {
   const store = storeFactory(initialState);
-  return shallow(<GuessInput store={store} />)
-    .dive()
-    .dive();
+  return shallow(<GuessInput store={store} />).dive();
 };
 
 describe('render', () => {
@@ -16,7 +14,7 @@ describe('render', () => {
     let wrapper;
     beforeEach(() => {
       const initialState = { success: false };
-      wrapper = setup(initialState);
+      wrapper = setup(initialState).dive();
     });
     test('renders without error', () => {
       const component = findByTestAttr(wrapper, 'component-input');
@@ -37,7 +35,7 @@ describe('render', () => {
     let wrapper;
     beforeEach(() => {
       const initialState = { success: true };
-      wrapper = setup(initialState);
+      wrapper = setup(initialState).dive();
     });
     test('renders without error', () => {
       const component = findByTestAttr(wrapper, 'component-input');
@@ -59,19 +57,15 @@ describe('render', () => {
 describe('update state', () => {});
 
 describe('redux props', () => {
-  let wrapper;
-  beforeEach(() => {
-    const store = storeFactory({ success: false });
-    wrapper = shallow(<GuessInput store={store} />).dive();
-  });
-
-  test('has success piece of state as prop', () => {
+  it('has success piece of state as prop', () => {
+    const wrapper = setup({ success: false });
     const successProp = wrapper.props().success;
     expect(successProp).toBe(false);
   });
 
-  test('`guessWord` action creator is a function prop', () => {
-    const guessPokemonProp = wrapper.props().guessPokemon;
-    expect(guessPokemonProp).toBeInstanceOf(Function);
+  it('`guessWord` action creator is a function prop', () => {
+    const wrapper = setup();
+    const { guessPokemon } = wrapper.props();
+    expect(guessPokemon).toBeInstanceOf(Function);
   });
 });

@@ -28,5 +28,6 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 0,
     'react/jsx-props-no-spreading': 0,
     'react/prefer-stateless-function': 1,
+    'react/prop-types': 1,
   },
 };
