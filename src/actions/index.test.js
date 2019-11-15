@@ -19,6 +19,8 @@ describe('getSecretPokemon action creator', () => {
         front_default:
           'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
       },
+      image:
+        'http://www.pokestadium.com/assets/img/sprites/official-art/large/pikachu.png',
       types: ['electric'],
     };
     const store = storeFactory();

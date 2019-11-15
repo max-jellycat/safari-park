@@ -5,6 +5,7 @@ export const actionTypes = {
   CORRECT_GUESS: 'CORRECT_GUESS',
   GUESS_WORD: 'GUESS_WORD',
   SET_SECRET_POKEMON: 'SET_SECRET_POKEMON',
+  CHECK_ARTWORK: 'CHECK_ARTWORK',
 };
 
 /**
@@ -35,17 +36,32 @@ export const getSecretPokemon = () => (dispatch) => {
     .get(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
     .then((response) => {
       const { id, name, sprites, types } = response.data;
+      const serializedName = name.includes('-') ? name.split('-')[0] : name;
+      console.log(serializedName, name);
+      // dispatch(hasArtwork(serializedName));
       dispatch({
         type: actionTypes.SET_SECRET_POKEMON,
         payload: {
           id,
-          name,
+          name: serializedName,
           sprites,
+          image: `http://www.pokestadium.com/assets/img/sprites/official-art/large/${serializedName}.png`,
           types: types.reduce(
             (accumulator, type) => [...accumulator, type.type.name],
             [],
           ),
         },
       });
+    });
+};
+
+export const hasArtwork = (name) => (dispatch) => {
+  axios
+    .get(
+      `http://www.pokestadium.com/assets/img/sprites/official-art/large/${name}.png`,
+    )
+    .then((res) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      dispatch({ type: 'CHECK_ARTWORK', payload: res.status !== 404 });
     });
 };

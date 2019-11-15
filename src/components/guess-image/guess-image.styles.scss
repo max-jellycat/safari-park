@@ -1,0 +1,12 @@
+.guess-image {
+  img {
+    width: 200px;
+  }
+
+  &.is-secret {
+    img {
+      filter: grayscale(100%) brightness(0);
+      opacity: 0.8;
+    }
+  }
+}

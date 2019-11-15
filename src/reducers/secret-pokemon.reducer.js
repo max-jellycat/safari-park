@@ -12,8 +12,14 @@ export default (state = null, action) => {
       return {
         id: action.payload.id,
         name: action.payload.name,
+        image: action.payload.image,
         sprites: action.payload.sprites,
         types: action.payload.types,
+      };
+    case actionTypes.CHECK_ARTWORK:
+      return {
+        ...state,
+        hasArtwork: action.payload,
       };
     default:
       return state;

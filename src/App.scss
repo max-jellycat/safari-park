@@ -12,6 +12,8 @@
 // Components
 @import './components/congrats/congrats.styles.scss';
 @import './components/guessed-pokemons/guessed-pokemons.styles.scss';
+@import './components/guess-image/guess-image.styles.scss';
+@import './components/loader/loader.styles.scss';
 
 main {
   width: 80%;
