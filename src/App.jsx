@@ -8,7 +8,6 @@ import GuessedPokemons from './components/guessed-pokemons/guessed-pokemons.comp
 import Congrats from './components/congrats/congrats.component';
 import GuessInput from './components/guess-input/guess-input.component';
 import GuessImage from './components/guess-image/guess-image.component';
-import Loader from './components/loader/loader.component';
 
 class App extends React.Component {
   render() {
@@ -19,7 +18,6 @@ class App extends React.Component {
         <main className="section">
           <h1 className="title is-size-1">Safari Park</h1>
           <Congrats success={success} />
-          <Loader />
           <GuessImage />
           <GuessInput />
           <GuessedPokemons guessedPokemons={guessedPokemons} />

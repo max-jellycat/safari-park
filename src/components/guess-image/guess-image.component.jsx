@@ -2,19 +2,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Pokeball from '../../assets/images/pokeball.png';
+import Loader from '../loader/loader.component';
 
 const GuessImage = ({ success, secretPokemon }) => (
-  <section className={`guess-image ${!success && 'is-secret'}`}>
-    {secretPokemon && (
-      <img
-        src={secretPokemon.image}
-        alt=""
-        onError={(e) => {
-          e.target.src = Pokeball;
-        }}
-      />
+  <>
+    {secretPokemon ? (
+      <section className={`guess-image ${!success && 'is-secret'}`}>
+        <img
+          className="guess-image--image"
+          src={secretPokemon.image}
+          alt="Who is this?"
+          onError={(e) => {
+            e.target.src = Pokeball;
+            e.target.className += ' no-pokemon';
+          }}
+        />
+      </section>
+    ) : (
+      <Loader />
     )}
-  </section>
+  </>
 );
 
 const mapStateToProps = ({ success, secretPokemon }) => ({

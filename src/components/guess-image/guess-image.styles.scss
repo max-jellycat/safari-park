@@ -1,6 +1,14 @@
 .guess-image {
-  img {
+  display: flex;
+  justify-content: center;
+  &--image {
     width: 200px;
+    display: block;
+
+    &.no-pokemon {
+      width: 100px;
+      padding: 50px 0;
+    }
   }
 
   &.is-secret {
